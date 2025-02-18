@@ -3,17 +3,14 @@ package com.BedanaYuksalish.BedanaYemlari.Configuration;
 import com.BedanaYuksalish.BedanaYemlari.Entity.ProfileEntity;
 import com.BedanaYuksalish.BedanaYemlari.Enums.ProfileRole;
 import com.BedanaYuksalish.BedanaYemlari.Enums.ProfileStatus;
-import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Getter
 public class CustomUserDetails implements UserDetails {
     private Long id;
     private String name;
@@ -31,6 +28,58 @@ public class CustomUserDetails implements UserDetails {
         this.password = profile.getPassword();
         this.role = profile.getRole();
         this.status = profile.getStatus();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public ProfileStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ProfileStatus status) {
+        this.status = status;
+    }
+
+    public ProfileRole getRole() {
+        return role;
+    }
+
+    public void setRole(ProfileRole role) {
+        this.role = role;
     }
 
     @Override

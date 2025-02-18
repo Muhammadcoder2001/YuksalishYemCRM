@@ -9,8 +9,7 @@ import lombok.Setter;
 
 
 import java.util.Date;
-@Getter
-@Setter
+
 @Entity
 public class Product {
 
@@ -24,4 +23,35 @@ public class Product {
 
     private Double amount;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 }
